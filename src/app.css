@@ -1,0 +1,14 @@
+@import url('https://rsms.me/inter/inter.css');
+
+.dropdown {
+    width: 134px !important;
+}
+
+svg path,
+svg symbol {
+    fill: inherit;
+}
+
+.linkslist {
+    width: 134px !important;
+}

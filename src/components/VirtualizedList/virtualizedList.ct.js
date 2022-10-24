@@ -1,0 +1,4 @@
+const ITEM_HEIGHT = 24;
+const LIST_HEIGHT = 168;
+
+export { ITEM_HEIGHT, LIST_HEIGHT };
