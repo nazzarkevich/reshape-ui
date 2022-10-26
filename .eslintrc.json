@@ -1,0 +1,210 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "es6": true,
+      "classes": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/react"
+  ],
+  "settings": {
+    "import/resolver": {
+      // need for explicit file name
+      // https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/webpack
+      //            "webpack": {
+      //               "config": "webpack.config.js"
+      //            },
+      "node": {
+        "paths": [
+          "src"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    }
+  },
+  "plugins": [
+    "react",
+    "import",
+    "react-hooks"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "max-len": [
+      "error",
+      80,
+      {
+        "ignoreComments": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": true,
+        "classes": true
+      }
+    ],
+    "no-confusing-arrow": [
+      "error",
+      {
+        "allowParens": true
+      }
+    ],
+    "init-declarations": [
+      "error",
+      "always"
+    ],
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always"
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "no-multiple-empty-lines": "error",
+    "object-shorthand": "error",
+    "block-scoped-var": "error",
+    "default-case": "error",
+    "guard-for-in": "error",
+    //        "no-empty-function": "error",
+    "no-empty-pattern": "error",
+    "no-floating-decimal": "error",
+    "no-implicit-coercion": "error",
+    //        "no-magic-numbers": ["error", { "ignore": [0, 1] }],
+    "no-multi-spaces": "error",
+    "no-param-reassign": "error",
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "arrow-spacing": "error",
+    "constructor-super": "error",
+    "no-var": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "block-spacing": "error",
+    "camelcase": "error",
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "func-call-spacing": [
+      "error",
+      "never"
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "max-params": [
+      "error",
+      3
+    ],
+    "no-nested-ternary": "error",
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "objectsInObjects": true
+      }
+    ],
+    "space-before-function-paren": "error",
+    "react/forbid-prop-types": [
+      "error",
+      {
+        "forbid": [
+          "any",
+          "array",
+          "object"
+        ]
+      }
+    ],
+    "react/prop-types": "warn",
+    "react/jsx-indent": [
+      "error",
+      4
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      4
+    ],
+    "react/react-in-jsx-scope": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/prefer-stateless-function": "warn",
+    "import/no-extraneous-dependencies": "warn",
+    "import/no-named-as-default": "warn",
+    "import/no-unresolved": [
+      "error",
+      {
+        "caseSensitive": false
+      }
+    ]
+  }
+}
+// "arrow-parens": ["error", "as-needed"],
+// "import/quotes":[2, "single"]
