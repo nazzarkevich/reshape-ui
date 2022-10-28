@@ -33,6 +33,9 @@
           ".jsx"
         ]
       }
+    },
+    "react": {
+      "version": "detect"
     }
   },
   "plugins": [
