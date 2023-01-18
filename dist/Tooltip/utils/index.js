@@ -15,9 +15,6 @@ Object.defineProperty(exports, "calcTopPosition", {
     return _calcTopPosition["default"];
   }
 });
-
 var _calcLeftPosition = _interopRequireDefault(require("./calcLeftPosition"));
-
 var _calcTopPosition = _interopRequireDefault(require("./calcTopPosition"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

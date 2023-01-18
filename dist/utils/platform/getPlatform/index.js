@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _getPlatform["default"];
   }
 });
-
 var _getPlatform = _interopRequireDefault(require("./getPlatform"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

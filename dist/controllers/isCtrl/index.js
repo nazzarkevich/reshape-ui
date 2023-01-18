@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _isCtrl["default"];
   }
 });
-
 var _isCtrl = _interopRequireDefault(require("./isCtrl"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

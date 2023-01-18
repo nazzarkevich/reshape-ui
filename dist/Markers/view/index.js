@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Markers["default"];
   }
 });
-
 var _Markers = _interopRequireDefault(require("./Markers.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Divider["default"];
   }
 });
-
 var _Divider = _interopRequireDefault(require("./Divider.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

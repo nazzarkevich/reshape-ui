@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Tag["default"];
   }
 });
-
 var _Tag = _interopRequireDefault(require("./Tag.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

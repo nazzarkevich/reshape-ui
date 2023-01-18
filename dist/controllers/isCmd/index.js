@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _isCmd["default"];
   }
 });
-
 var _isCmd = _interopRequireDefault(require("./isCmd"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

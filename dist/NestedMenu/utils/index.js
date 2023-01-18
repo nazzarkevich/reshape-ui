@@ -9,7 +9,5 @@ Object.defineProperty(exports, "findRecursivelyOptionsById", {
     return _findRecursivelyOptionsById["default"];
   }
 });
-
 var _findRecursivelyOptionsById = _interopRequireDefault(require("./findRecursivelyOptionsById"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

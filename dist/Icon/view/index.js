@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Icon["default"];
   }
 });
-
 var _Icon = _interopRequireDefault(require("./Icon.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.PLATFORM = exports.PLATFORMS = void 0;
+exports.PLATFORMS = exports.PLATFORM = void 0;
 var PLATFORMS = {
   MAC_OS: ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
   WINDOWS: ['Win32', 'Win64', 'Windows', 'WinCE']

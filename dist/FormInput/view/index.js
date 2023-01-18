@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _FormInput["default"];
   }
 });
-
 var _FormInput = _interopRequireDefault(require("./FormInput.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

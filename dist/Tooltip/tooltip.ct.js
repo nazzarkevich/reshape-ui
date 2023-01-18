@@ -3,12 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TOOLTIP_SCROLL_CONTAINER = exports.VIEWPORT_SPACE = exports.DEFAULT_TITLE = exports.ENTER_DELAY = exports.PLACEMENT = exports.INDENT = void 0;
-
+exports.VIEWPORT_SPACE = exports.TOOLTIP_SCROLL_CONTAINER = exports.PLACEMENT = exports.INDENT = exports.ENTER_DELAY = exports.DEFAULT_TITLE = void 0;
 var _styles = _interopRequireDefault(require("../styles"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PLACEMENT = {
   TOP: 'top',
   TOP_START: 'top-start',

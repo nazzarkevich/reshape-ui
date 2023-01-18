@@ -3,26 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = _default;
 exports.Wrapper = void 0;
-
+exports["default"] = _default;
 var _utils = require("../../utils");
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
+var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Wrapper = (0, _utils.createStyled)('div')(_templateObject());
+var Wrapper = (0, _utils.createStyled)('div')(_templateObject || (_templateObject = _taggedTemplateLiteral([""])));
 exports.Wrapper = Wrapper;
-
 function _default(theme) {
   var styles = theme.styles;
   return {

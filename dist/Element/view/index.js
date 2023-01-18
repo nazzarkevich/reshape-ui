@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Element["default"];
   }
 });
-
 var _Element = _interopRequireDefault(require("./Element.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

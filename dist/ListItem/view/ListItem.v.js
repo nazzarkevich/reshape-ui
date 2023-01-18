@@ -4,27 +4,22 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _style = require("../style");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ListItemView = function ListItemView(props) {
   var id = props.id,
-      data = props.data,
-      onClick = props.onClick,
-      children = props.children,
-      className = props.className,
-      elementRef = props.elementRef,
-      onMouseOver = props.onMouseOver,
-      onMouseEnter = props.onMouseEnter,
-      onMouseLeave = props.onMouseLeave,
-      componentStyles = props.componentStyles;
-  return _react["default"].createElement(_style.ListItem, {
+    data = props.data,
+    onClick = props.onClick,
+    children = props.children,
+    className = props.className,
+    elementRef = props.elementRef,
+    onMouseOver = props.onMouseOver,
+    onMouseEnter = props.onMouseEnter,
+    onMouseLeave = props.onMouseLeave,
+    componentStyles = props.componentStyles;
+  return /*#__PURE__*/_react["default"].createElement(_style.ListItem, {
     id: id,
     "data-id": data,
     ref: elementRef,
@@ -36,7 +31,6 @@ var ListItemView = function ListItemView(props) {
     styles: componentStyles
   }, children);
 };
-
 ListItemView.displayName = 'ListItemView';
 ListItemView.propTypes = {
   id: _propTypes["default"].string,

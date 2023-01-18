@@ -3,36 +3,19 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = _default;
 exports.Input = void 0;
-
+exports["default"] = _default;
 var _utils = require("../../utils/");
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { keys.push.apply(keys, Object.getOwnPropertySymbols(object)); } if (enumerableOnly) keys = keys.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
+var _templateObject;
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Input = (0, _utils.createStyled)('input')(_templateObject());
+var Input = (0, _utils.createStyled)('input')(_templateObject || (_templateObject = _taggedTemplateLiteral([""])));
 exports.Input = Input;
-
 function _default(customTheme, props, state) {
   var theme = _objectSpread({}, customTheme);
-
-  theme = _objectSpread({}, theme, {
+  theme = _objectSpread(_objectSpread({}, theme), {}, {
     color: theme.idleColor,
     placeholder: theme.idlePlaceholder,
     borderStyle: theme.idleBorderStyle,
@@ -40,27 +23,22 @@ function _default(customTheme, props, state) {
     boxShadow: theme.idleBoxShadow,
     outline: theme.idleOutline
   });
-
   if (props.secondary) {
-    theme = _objectSpread({}, theme, {}, theme.secondary);
+    theme = _objectSpread(_objectSpread({}, theme), theme.secondary);
   }
-
   if (props.medium) {
-    theme = _objectSpread({}, theme, {}, theme.medium);
+    theme = _objectSpread(_objectSpread({}, theme), theme.medium);
   }
-
   if (props.truncate) {
-    theme = _objectSpread({}, theme, {
+    theme = _objectSpread(_objectSpread({}, theme), {}, {
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textOverflow: 'ellipsis'
     });
   }
-
   if (props.error || state.error) {
-    theme = _objectSpread({}, theme, {}, theme.error);
+    theme = _objectSpread(_objectSpread({}, theme), theme.error);
   }
-
   return {
     width: theme.width,
     height: theme.height,
@@ -94,6 +72,7 @@ function _default(customTheme, props, state) {
     // '&:hover::placeholder': {
     //     color: theme.hoverPlaceholderColor
     // },
+
     '&:focus': {
       outline: '0 none'
     }

@@ -15,9 +15,6 @@ Object.defineProperty(exports, "sortByIds", {
     return _sortByIds["default"];
   }
 });
-
 var _setInitialOptionIndex = _interopRequireDefault(require("./setInitialOptionIndex"));
-
 var _sortByIds = _interopRequireDefault(require("./sortByIds"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

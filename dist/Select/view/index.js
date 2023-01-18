@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Select["default"];
   }
 });
-
 var _Select = _interopRequireDefault(require("./Select.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

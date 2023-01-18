@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Tab["default"];
   }
 });
-
 var _Tab = _interopRequireDefault(require("./Tab.c"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

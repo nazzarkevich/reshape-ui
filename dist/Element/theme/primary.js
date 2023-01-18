@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var primaryTheme = function primaryTheme(styles) {
   return {
     color: styles.active,
@@ -12,6 +11,5 @@ var primaryTheme = function primaryTheme(styles) {
     iconColor: styles.active
   };
 };
-
 var _default = primaryTheme;
 exports["default"] = _default;

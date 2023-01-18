@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _TreeElement["default"];
   }
 });
-
 var _TreeElement = _interopRequireDefault(require("./TreeElement.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

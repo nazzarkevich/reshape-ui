@@ -15,9 +15,6 @@ Object.defineProperty(exports, "ThemeProvider", {
     return _themeProvider["default"];
   }
 });
-
 var _themeHoc = _interopRequireDefault(require("./themeHoc"));
-
 var _themeProvider = _interopRequireDefault(require("./themeProvider"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

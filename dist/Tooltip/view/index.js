@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _Tooltip["default"];
   }
 });
-
 var _Tooltip = _interopRequireDefault(require("./Tooltip.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

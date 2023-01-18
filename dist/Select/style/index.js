@@ -3,38 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Wrapper = exports.Title = void 0;
 exports["default"] = _default;
-exports.Title = exports.Wrapper = void 0;
-
 var _utils = require("../../utils");
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
+var _templateObject, _templateObject2;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Wrapper = (0, _utils.createStyled)('div')(_templateObject());
+var Wrapper = (0, _utils.createStyled)('div')(_templateObject || (_templateObject = _taggedTemplateLiteral([""])));
 exports.Wrapper = Wrapper;
-var Title = (0, _utils.createStyled)('span')(_templateObject2());
+var Title = (0, _utils.createStyled)('span')(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([""])));
 exports.Title = Title;
-
 function _default(theme, props) {
   var styles = theme.styles;
   return {

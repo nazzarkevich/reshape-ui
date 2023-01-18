@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _isMacOS["default"];
   }
 });
-
 var _isMacOS = _interopRequireDefault(require("./isMacOS"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

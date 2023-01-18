@@ -4,23 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _IconButton = _interopRequireDefault(require("../../IconButton"));
-
 var _Icon = _interopRequireDefault(require("../../Icon"));
-
 var _Input = _interopRequireDefault(require("../../Input"));
-
 var _Indent = _interopRequireDefault(require("../../Indent"));
-
 var _style = require("../style");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var propTypes = {
   id: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number]).isRequired,
   primary: _propTypes["default"].bool,
@@ -48,89 +39,81 @@ var propTypes = {
   onStatusIconClick: _propTypes["default"].func,
   componentStyles: _propTypes["default"].shape()
 };
-
 var TreeElementView = function TreeElementView(props) {
   var id = props.id,
-      primary = props.primary,
-      inputValue = props.inputValue,
-      elementName = props.elementName,
-      className = props.className,
-      onClick = props.onClick,
-      indents = props.indents,
-      editable = props.editable,
-      setRootRef = props.setRootRef,
-      setInputRef = props.setInputRef,
-      onMouseOver = props.onMouseOver,
-      onMouseLeave = props.onMouseLeave,
-      onMouseDown = props.onMouseDown,
-      showChildren = props.showChildren,
-      onInputChange = props.onInputChange,
-      onInputKeyDown = props.onInputKeyDown,
-      toggleButtonClassName = props.toggleButtonClassName,
-      toggleButtonName = props.toggleButtonName,
-      elementIconName = props.elementIconName,
-      actionIconName = props.actionIconName,
-      statusIconName = props.statusIconName,
-      actionIconClassName = props.actionIconClassName,
-      statusIconClassName = props.statusIconClassName,
-      onStatusIconClick = props.onStatusIconClick,
-      componentStyles = props.componentStyles;
+    primary = props.primary,
+    inputValue = props.inputValue,
+    elementName = props.elementName,
+    className = props.className,
+    onClick = props.onClick,
+    indents = props.indents,
+    editable = props.editable,
+    setRootRef = props.setRootRef,
+    setInputRef = props.setInputRef,
+    onMouseOver = props.onMouseOver,
+    onMouseLeave = props.onMouseLeave,
+    onMouseDown = props.onMouseDown,
+    showChildren = props.showChildren,
+    onInputChange = props.onInputChange,
+    onInputKeyDown = props.onInputKeyDown,
+    toggleButtonClassName = props.toggleButtonClassName,
+    toggleButtonName = props.toggleButtonName,
+    elementIconName = props.elementIconName,
+    actionIconName = props.actionIconName,
+    statusIconName = props.statusIconName,
+    actionIconClassName = props.actionIconClassName,
+    statusIconClassName = props.statusIconClassName,
+    onStatusIconClick = props.onStatusIconClick,
+    componentStyles = props.componentStyles;
   var indentElement = null,
-      elementIconElement = null,
-      childrenIconElement = null,
-      actionIconElement = null,
-      statusIconElement = null;
-
+    elementIconElement = null,
+    childrenIconElement = null,
+    actionIconElement = null,
+    statusIconElement = null;
   if (indents) {
-    indentElement = _react["default"].createElement(_Indent["default"], {
+    indentElement = /*#__PURE__*/_react["default"].createElement(_Indent["default"], {
       number: indents
     });
   }
-
   if (toggleButtonName) {
-    childrenIconElement = _react["default"].createElement(_Icon["default"], {
+    childrenIconElement = /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       name: toggleButtonName,
       className: toggleButtonClassName,
       rotate: showChildren ? 90 : null,
       style: componentStyles.toggleButton
     });
   }
-
   if (elementIconName) {
-    elementIconElement = _react["default"].createElement(_Icon["default"], {
+    elementIconElement = /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
       name: elementIconName,
       style: componentStyles.elementIcon
     });
   }
-
   if (!editable && statusIconName) {
-    statusIconElement = _react["default"].createElement(_style.IconWrapper, {
+    statusIconElement = /*#__PURE__*/_react["default"].createElement(_style.IconWrapper, {
       className: statusIconClassName,
       styles: componentStyles.statusIconWrapper
-    }, _react["default"].createElement(_IconButton["default"], {
+    }, /*#__PURE__*/_react["default"].createElement(_IconButton["default"], {
       iconName: statusIconName,
       onClick: onStatusIconClick,
       style: componentStyles.statusIcon
     }));
   }
-
   if (actionIconName) {
-    actionIconElement = _react["default"].createElement(_style.IconWrapper, {
+    actionIconElement = /*#__PURE__*/_react["default"].createElement(_style.IconWrapper, {
       className: actionIconClassName,
       styles: componentStyles.actionIconWrapper
-    }, _react["default"].createElement(_IconButton["default"], {
+    }, /*#__PURE__*/_react["default"].createElement(_IconButton["default"], {
       active: primary,
       iconName: actionIconName,
       style: componentStyles.statusIcon
     }));
   }
-
-  var textElement = _react["default"].createElement(_style.ElementText, {
+  var textElement = /*#__PURE__*/_react["default"].createElement(_style.ElementText, {
     styles: componentStyles.elementText
   }, elementName);
-
   if (editable) {
-    textElement = _react["default"].createElement(_Input["default"], {
+    textElement = /*#__PURE__*/_react["default"].createElement(_Input["default"], {
       value: inputValue,
       elementRef: setInputRef,
       onChange: onInputChange,
@@ -138,8 +121,7 @@ var TreeElementView = function TreeElementView(props) {
       style: componentStyles.input
     });
   }
-
-  return _react["default"].createElement(_style.Element, {
+  return /*#__PURE__*/_react["default"].createElement(_style.Element, {
     id: id,
     ref: setRootRef,
     onClick: onClick,
@@ -150,7 +132,6 @@ var TreeElementView = function TreeElementView(props) {
     styles: componentStyles.element
   }, indentElement, childrenIconElement, elementIconElement, textElement, actionIconElement, statusIconElement);
 };
-
 TreeElementView.propTypes = propTypes;
 var _default = TreeElementView;
 exports["default"] = _default;

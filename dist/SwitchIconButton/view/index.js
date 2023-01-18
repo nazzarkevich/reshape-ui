@@ -9,7 +9,5 @@ Object.defineProperty(exports, "default", {
     return _SwitchIconButton["default"];
   }
 });
-
 var _SwitchIconButton = _interopRequireDefault(require("./SwitchIconButton.v"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
