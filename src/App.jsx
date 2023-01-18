@@ -61,25 +61,29 @@ class App extends Component {
             <div id="app">
                 <ThemeProvider>
                     <div style={{ width: 200, marginTop: '50px' }}>
-                        <h2>Autocomplete</h2>
-                        <Autocomplete
-                            options={options}
-                            secondary
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                            onKeyDown={this.handleKeyDown}
-                            placeholder="Autocomplete"
-                        />
+                        <h3>Node</h3>
+                        <Node label='div' primary/>
                     </div>
-                    <div style={{ width: '200px', marginTop: '20px' }}>
-                        <h2>Virtualized Dropdown</h2>
-                        <VirtualizedDropdown
-                            onChange={this.handleDropdownChange}
-                            activeOptions={['1', '2']}
-                            value={this.state.selectedId}
-                            options={options}
-                        />
-                    </div>
+                    {/*<div style={{ width: 200, marginTop: '50px' }}>*/}
+                    {/*    <h2>Autocomplete</h2>*/}
+                    {/*    <Autocomplete*/}
+                    {/*        options={options}*/}
+                    {/*        secondary*/}
+                    {/*        value={this.state.value}*/}
+                    {/*        onChange={this.handleChange}*/}
+                    {/*        onKeyDown={this.handleKeyDown}*/}
+                    {/*        placeholder="Autocomplete"*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+                    {/*<div style={{ width: '200px', marginTop: '20px' }}>*/}
+                    {/*    <h2>Virtualized Dropdown</h2>*/}
+                    {/*    <VirtualizedDropdown*/}
+                    {/*        onChange={this.handleDropdownChange}*/}
+                    {/*        activeOptions={['1', '2']}*/}
+                    {/*        value={this.state.selectedId}*/}
+                    {/*        options={options}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
                 </ThemeProvider>
             </div>
         );
