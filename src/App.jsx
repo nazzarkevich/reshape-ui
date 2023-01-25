@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useRef, useEffect } from 'react';
 import './app.css';
 import { ThemeProvider } from './components/theme';
 import Icon from './components/Icon';
@@ -35,59 +35,49 @@ for (let i = 0; i < 100; i++) {
     });
 }
 
-class App extends Component {
-    constructor (props) {
-        super(props);
+const App = () => {
+    const tagRef = useRef(null);
 
-        this.state = {
-            value: '1500'
-        };
-    }
+    console.log('tagRef -->', tagRef);
 
-    handleChange = (event, { id }, reason) => {
-        this.setState({ value: id });
-    }
+    useEffect(() => {
+        console.log('tagRef -->', tagRef.current.textContent);
+    }, [tagRef.current])
 
-    handleUnitChange = ({ id }) => {
-        console.log('unit ->', id);
-    }
-
-    handleClose = ({ id }) => {
-        this.setState({ value: id });
-    }
-
-    render () {
-        return (
-            <div id="app">
-                <ThemeProvider>
-                    <div style={{ width: 200, marginTop: '50px' }}>
-                        <h3>Node</h3>
-                        <Node label='div' primary/>
-                    </div>
-                    {/*<div style={{ width: 200, marginTop: '50px' }}>*/}
-                    {/*    <h2>Autocomplete</h2>*/}
-                    {/*    <Autocomplete*/}
-                    {/*        options={options}*/}
-                    {/*        secondary*/}
-                    {/*        value={this.state.value}*/}
-                    {/*        onChange={this.handleChange}*/}
-                    {/*        onKeyDown={this.handleKeyDown}*/}
-                    {/*        placeholder="Autocomplete"*/}
-                    {/*    />*/}
-                    {/*</div>*/}
-                    {/*<div style={{ width: '200px', marginTop: '20px' }}>*/}
-                    {/*    <h2>Virtualized Dropdown</h2>*/}
-                    {/*    <VirtualizedDropdown*/}
-                    {/*        onChange={this.handleDropdownChange}*/}
-                    {/*        activeOptions={['1', '2']}*/}
-                    {/*        value={this.state.selectedId}*/}
-                    {/*        options={options}*/}
-                    {/*    />*/}
-                    {/*</div>*/}
-                </ThemeProvider>
-            </div>
-        );
-    }
+    return (
+      <div id="app">
+          <ThemeProvider>
+              <div style={{ width: 200, marginTop: '50px' }}>
+                  <h3>Node</h3>
+                  <Node label='div' primary/>
+              </div>
+              <div style={{ width: 200, marginTop: '50px' }}>
+                  <h3>Tag</h3>
+                  <Tag innerRef={tagRef}>Super-Cool</Tag>
+              </div>
+              {/*<div style={{ width: 200, marginTop: '50px' }}>*/}
+              {/*    <h2>Autocomplete</h2>*/}
+              {/*    <Autocomplete*/}
+              {/*        options={options}*/}
+              {/*        secondary*/}
+              {/*        value={this.state.value}*/}
+              {/*        onChange={this.handleChange}*/}
+              {/*        onKeyDown={this.handleKeyDown}*/}
+              {/*        placeholder="Autocomplete"*/}
+              {/*    />*/}
+              {/*</div>*/}
+              {/*<div style={{ width: '200px', marginTop: '20px' }}>*/}
+              {/*    <h2>Virtualized Dropdown</h2>*/}
+              {/*    <VirtualizedDropdown*/}
+              {/*        onChange={this.handleDropdownChange}*/}
+              {/*        activeOptions={['1', '2']}*/}
+              {/*        value={this.state.selectedId}*/}
+              {/*        options={options}*/}
+              {/*    />*/}
+              {/*</div>*/}
+          </ThemeProvider>
+      </div>
+    );
 }
 
 export default App;

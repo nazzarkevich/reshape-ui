@@ -28,7 +28,7 @@ const TagView = forwardRef(function TagView(props, ref) {
         onContextMenu,
         componentStyles,
         attributes,
-        children
+        children,
     } = props;
 
     let tagElement = (

@@ -13,6 +13,7 @@ var _compileStyles = _interopRequireDefault(require("../utils/compileStyles"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -83,14 +84,9 @@ var Tag = /*#__PURE__*/function (_PureComponent) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this$props = this.props,
-        editable = _this$props.editable,
-        elementRef = _this$props.elementRef;
+      var editable = this.props.editable;
       if (editable) {
         this.moveCaretToEnd();
-      }
-      if (typeof elementRef === 'function') {
-        elementRef(this.getNode());
       }
     }
   }, {
@@ -122,28 +118,20 @@ var Tag = /*#__PURE__*/function (_PureComponent) {
       }
     }
   }, {
-    key: "getNode",
-    value: function getNode() {
-      return this.nativeElement.current;
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-        id = _this$props2.id,
-        ref = _this$props2.ref,
-        children = _this$props2.children,
-        editable = _this$props2.editable,
-        className = _this$props2.className,
-        startIcon = _this$props2.startIcon,
-        onMouseDown = _this$props2.onMouseDown;
+      var _this$props = this.props,
+        id = _this$props.id,
+        children = _this$props.children,
+        editable = _this$props.editable,
+        className = _this$props.className,
+        startIcon = _this$props.startIcon,
+        onMouseDown = _this$props.onMouseDown;
       var componentStyles = (0, _compileStyles["default"])(_style["default"], this.props, this.state);
       var attributes = {
-        id: id,
-        ref: this.nativeElement
+        id: id
       };
       var tagProps = {
-        ref: ref,
         startIcon: startIcon,
         className: className,
         editable: editable,
@@ -156,7 +144,9 @@ var Tag = /*#__PURE__*/function (_PureComponent) {
         componentStyles: componentStyles,
         attributes: attributes
       };
-      return /*#__PURE__*/_react["default"].createElement(_view["default"], tagProps, children);
+      return /*#__PURE__*/_react["default"].createElement(_view["default"], _extends({}, tagProps, {
+        ref: this.props.innerRef
+      }), children);
     }
   }]);
   return Tag;
@@ -176,7 +166,7 @@ _defineProperty(Tag, "propTypes", {
   onClick: _propTypes["default"].func,
   onInput: _propTypes["default"].func,
   onKeyDown: _propTypes["default"].func,
-  elementRef: _propTypes["default"].func,
+  innerRef: _propTypes["default"].object,
   onMouseDown: _propTypes["default"].func,
   onContextMenu: _propTypes["default"].func
 });

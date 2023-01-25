@@ -31,7 +31,7 @@ class Tag extends PureComponent {
         onClick:       PropTypes.func,
         onInput:       PropTypes.func,
         onKeyDown:     PropTypes.func,
-        elementRef:    PropTypes.func,
+        innerRef:      PropTypes.object,
         onMouseDown:   PropTypes.func,
         onContextMenu: PropTypes.func
     };
@@ -51,14 +51,10 @@ class Tag extends PureComponent {
     }
 
     componentDidMount () {
-        const { editable, elementRef } = this.props;
+        const { editable } = this.props;
 
         if (editable) {
             this.moveCaretToEnd();
-        }
-
-        if (typeof elementRef === 'function') {
-            elementRef(this.getNode());
         }
     }
 
@@ -129,14 +125,9 @@ class Tag extends PureComponent {
         }
     };
 
-    getNode () {
-        return this.nativeElement.current;
-    }
-
     render () {
         const {
             id,
-            ref,
             children,
             editable,
             className,
@@ -149,12 +140,10 @@ class Tag extends PureComponent {
         );
 
         const attributes = {
-            id,
-            ref: this.nativeElement
+            id
         };
 
         const tagProps = {
-            ref,
             startIcon,
             className,
             editable,
@@ -169,7 +158,7 @@ class Tag extends PureComponent {
         };
 
         return (
-            <TagView {...tagProps}>
+            <TagView {...tagProps} ref={this.props.innerRef}>
                 {children}
             </TagView>
         );
