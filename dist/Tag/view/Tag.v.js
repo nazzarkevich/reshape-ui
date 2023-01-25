@@ -23,7 +23,7 @@ var propTypes = {
   editable: _propTypes["default"].bool,
   startIcon: _propTypes["default"].node
 };
-var TagView = /*#__PURE__*/(0, _react.forwardRef)(function TagView(props, ref) {
+var TagView = function TagView(props) {
   var className = props.className,
     editable = props.editable,
     onClick = props.onClick,
@@ -41,9 +41,7 @@ var TagView = /*#__PURE__*/(0, _react.forwardRef)(function TagView(props, ref) {
     className: className,
     onContextMenu: onContextMenu,
     styles: componentStyles
-  }, attributes, {
-    ref: ref
-  }), startIcon, children);
+  }, attributes), startIcon, children);
   if (editable) {
     tagElement = /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
       key: FRAGMENT_KEY
@@ -57,12 +55,10 @@ var TagView = /*#__PURE__*/(0, _react.forwardRef)(function TagView(props, ref) {
       onInput: onInput,
       onBlur: onBlur,
       styles: componentStyles
-    }, attributes, {
-      ref: ref
-    }), startIcon, children));
+    }, attributes), startIcon, children));
   }
   return tagElement;
-});
+};
 TagView.propTypes = propTypes;
 var _default = TagView;
 exports["default"] = _default;
