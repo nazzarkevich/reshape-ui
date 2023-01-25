@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Tag } from '../style';
 
@@ -15,7 +15,7 @@ const propTypes = {
     startIcon:     PropTypes.node
 };
 
-const TagView = props => {
+const TagView = forwardRef(function TagView(props, ref) {
     const {
         className,
         editable,
@@ -32,42 +32,44 @@ const TagView = props => {
     } = props;
 
     let tagElement = (
-        <Tag
-            onClick={onClick}
-            className={className}
-            onContextMenu={onContextMenu}
-            styles={componentStyles}
-            {...attributes}
-        >
-            {startIcon}
-            {children}
-        </Tag>
+      <Tag
+        onClick={onClick}
+        className={className}
+        onContextMenu={onContextMenu}
+        styles={componentStyles}
+        {...attributes}
+        ref={ref}
+      >
+          {startIcon}
+          {children}
+      </Tag>
     );
 
     if (editable) {
         tagElement = (
-            <Fragment key={FRAGMENT_KEY}>
-                <Tag
-                    suppressContentEditableWarning={true}
-                    contentEditable={editable}
-                    onMouseDown={onMouseDown}
-                    className={className}
-                    onKeyDown={onKeyDown}
-                    onClick={onClick}
-                    onInput={onInput}
-                    onBlur={onBlur}
-                    styles={componentStyles}
-                    {...attributes}
-                >
-                    {startIcon}
-                    {children}
-                </Tag>
-            </Fragment>
+          <Fragment key={FRAGMENT_KEY}>
+              <Tag
+                suppressContentEditableWarning={true}
+                contentEditable={editable}
+                onMouseDown={onMouseDown}
+                className={className}
+                onKeyDown={onKeyDown}
+                onClick={onClick}
+                onInput={onInput}
+                onBlur={onBlur}
+                styles={componentStyles}
+                {...attributes}
+                ref={ref}
+              >
+                  {startIcon}
+                  {children}
+              </Tag>
+          </Fragment>
         );
     }
 
     return tagElement;
-};
+});
 
 TagView.propTypes = propTypes;
 
