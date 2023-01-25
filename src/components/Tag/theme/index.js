@@ -18,7 +18,8 @@ const basic = styles => {
         lineHeight:   styles.textNormal,
         textAlign:    'left',
         color:        styles.primary,
-        background:   styles.primaryBackground
+        background:   styles.primaryBackground,
+        cursor: 'pointer'
     };
 };
 
