@@ -131,6 +131,7 @@ var Tag = /*#__PURE__*/function (_PureComponent) {
     value: function render() {
       var _this$props2 = this.props,
         id = _this$props2.id,
+        ref = _this$props2.ref,
         children = _this$props2.children,
         editable = _this$props2.editable,
         className = _this$props2.className,
@@ -142,6 +143,7 @@ var Tag = /*#__PURE__*/function (_PureComponent) {
         ref: this.nativeElement
       };
       var tagProps = {
+        ref: ref,
         startIcon: startIcon,
         className: className,
         editable: editable,

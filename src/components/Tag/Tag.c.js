@@ -136,6 +136,7 @@ class Tag extends PureComponent {
     render () {
         const {
             id,
+            ref,
             children,
             editable,
             className,
@@ -153,6 +154,7 @@ class Tag extends PureComponent {
         };
 
         const tagProps = {
+            ref,
             startIcon,
             className,
             editable,
