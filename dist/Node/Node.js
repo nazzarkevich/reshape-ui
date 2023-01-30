@@ -21,6 +21,8 @@ var propTypes = {
   title: _propTypes["default"].string,
   label: _propTypes["default"].string.isRequired,
   indents: _propTypes["default"].node,
+  hovered: _propTypes["default"].bool,
+  tertiary: _propTypes["default"].bool,
   tabIndex: _propTypes["default"].number,
   elementRef: _propTypes["default"].func,
   startIcon: _propTypes["default"].node,

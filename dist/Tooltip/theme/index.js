@@ -20,7 +20,7 @@ var basic = function basic(styles) {
       fontSize: styles.textNormal,
       fontWeight: styles.fontWeightNormal,
       lineHeight: styles.lineHeightNormal,
-      position: 'absolute',
+      position: 'fixed',
       zIndex: styles.zIndex
     },
     wrapper: {

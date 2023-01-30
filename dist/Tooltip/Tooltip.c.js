@@ -33,10 +33,6 @@ var Tooltip = /*#__PURE__*/function (_Component) {
     var _this;
     _classCallCheck(this, Tooltip);
     _this = _super.call(this, props);
-    _defineProperty(_assertThisInitialized(_this), "handleContainerScroll", function () {
-      var show = _this.state.show;
-      if (show) _this.hideTooltip();
-    });
     _defineProperty(_assertThisInitialized(_this), "showTooltip", function () {
       _this.setState({
         show: true
@@ -88,23 +84,29 @@ var Tooltip = /*#__PURE__*/function (_Component) {
     return _this;
   }
   _createClass(Tooltip, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.scrollContainer = document.querySelector(".".concat(_tooltip.TOOLTIP_SCROLL_CONTAINER));
-      if (this.scrollContainer) {
-        this.scrollContainer.addEventListener('scroll', this.handleContainerScroll);
-      }
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      if (this.scrollContainer) {
-        this.scrollContainer.removeEventListener('scroll', this.handleContainerScroll);
-      }
-    }
-  }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
+    value:
+    // componentDidMount () {
+    //     this.scrollContainer = document.querySelector(`.${TOOLTIP_SCROLL_CONTAINER}`);
+    //
+    //     if (this.scrollContainer) {
+    //         this.scrollContainer.addEventListener(
+    //             'scroll',
+    //             this.handleContainerScroll
+    //         );
+    //     }
+    // }
+    //
+    // componentWillUnmount () {
+    //     if (this.scrollContainer) {
+    //         this.scrollContainer.removeEventListener(
+    //             'scroll',
+    //             this.handleContainerScroll
+    //         );
+    //     }
+    // }
+
+    function componentDidUpdate(prevProps, prevState) {
       var _this$state = this.state,
         hover = _this$state.hover,
         show = _this$state.show;
@@ -119,6 +121,12 @@ var Tooltip = /*#__PURE__*/function (_Component) {
         this.setPosition();
       }
     }
+
+    // handleContainerScroll = () => {
+    //     const { show } = this.state;
+    //
+    //     if (show) this.hideTooltip();
+    // };
   }, {
     key: "render",
     value: function render() {

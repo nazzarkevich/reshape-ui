@@ -21,12 +21,16 @@ var styleSheet = function styleSheet(defaultTheme, props) {
   var hovered = props.hovered,
     primary = props.primary,
     secondary = props.secondary,
+    tertiary = props.tertiary,
     disabled = props.disabled;
   if (primary) {
     theme = _objectSpread(_objectSpread({}, theme), theme.primary);
   }
   if (secondary) {
     theme = _objectSpread(_objectSpread({}, theme), theme.secondary);
+  }
+  if (tertiary) {
+    theme = _objectSpread(_objectSpread({}, theme), theme.tertiary);
   }
   if (disabled) {
     theme = _objectSpread(_objectSpread({}, theme), theme.disabled);
