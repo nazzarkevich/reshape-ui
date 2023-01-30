@@ -4,7 +4,7 @@ import SelectView from './view';
 import stylesheet from './style';
 import compileStyles from '../utils/compileStyles';
 import { EVENT } from '../constants';
-
+// TODO: Maybe remove it
 class Select extends Component {
     constructor (props) {
         super(props);

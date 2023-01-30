@@ -4,6 +4,7 @@ import InputDropdownView from './InputDropdown.v';
 import compileStyles from '../utils/compileStyles';
 import stylesheet from './style';
 import units from './units';
+import { UNIT } from '../constants';
 
 const propTypes = {
     value:            PropTypes.string,
@@ -27,7 +28,8 @@ const propTypes = {
 const defaultProps = {
     options:         units,
     showDropdown:    false,
-    disableDropdown: false
+    disableDropdown: false,
+    selectedId: UNIT.PX
 };
 
 class InputDropdown extends PureComponent {

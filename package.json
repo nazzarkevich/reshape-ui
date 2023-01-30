@@ -49,7 +49,8 @@
     "node-sass": "^8.0.0",
     "prop-types": "^15.8.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^6.8.0",
     "react-svg-loader": "^2.1.0",
     "sass-loader": "13.1.0",
     "style-loader": "^0.21.0",
@@ -70,6 +71,7 @@
     "deepmerge": "^4.2.2",
     "lodash": "^4.17.21",
     "react-event-listener": "^0.6.6",
-    "react-window": "^1.8.8"
+    "react-window": "^1.8.8",
+    "svg-sprite-loader": "^6.0.11"
   }
 }

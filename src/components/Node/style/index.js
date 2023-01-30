@@ -12,6 +12,7 @@ const styleSheet = (defaultTheme, props) => {
         hovered,
         primary,
         secondary,
+        tertiary,
         disabled
     } = props;
 
@@ -26,6 +27,13 @@ const styleSheet = (defaultTheme, props) => {
         theme = {
             ...theme,
             ...theme.secondary
+        };
+    }
+
+    if (tertiary) {
+        theme = {
+            ...theme,
+            ...theme.tertiary
         };
     }
 

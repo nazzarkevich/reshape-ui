@@ -1,6 +1,7 @@
 import primary from './primary';
 import secondary from './secondary';
 import disabled from './disabled';
+import tertiary from './tertiary';
 import color from 'color';
 
 const basic = styles => {
@@ -40,7 +41,8 @@ const theme = (styles) => ({
     ...basic(styles),
     primary:   { ...primary(styles) },
     secondary: { ...secondary(styles) },
-    disabled:  { ...disabled(styles) }
+    disabled:  { ...disabled(styles) },
+    tertiary:  { ...tertiary(styles) }
 });
 
 export default theme;

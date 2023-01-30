@@ -1,83 +1,85 @@
-import React, { Component, useRef, useEffect } from 'react';
-import './app.css';
-import { ThemeProvider } from './components/theme';
-import Icon from './components/Icon';
-import ActionButton from './components/ActionButton';
-import SwitchIconButton from './components/SwitchIconButton';
-import IconButton from './components/IconButton';
-import DropdownSearch from './components/DropdownSearch';
-import Menu from './components/Menu';
-import NestedMenu from './components/NestedMenu';
-import TreeElement from './components/TreeElement';
-import Element from './components/Element';
-import Node from './components/Node';
-import Button from './components/Button';
-import Tag from './components/Tag';
-import Indent from './components/Indent';
-import Tabs from './components/Tabs';
-import Tab from './components/Tab';
-import Input from './components/Input';
-import Select from './components/Select';
-import UnitInput from './components/UnitInput';
-import Autocomplete from './components/Autocomplete';
-import InputDropdown from './components/InputDropdown';
-import VirtualizedDropdown from './components/VirtualizedDropdown';
-import Markers from './components/Markers';
-import Dialog from './components/Dialog';
-import Tooltip from './components/Tooltip';
+import React from 'react';
+import './app.css'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Routes
+} from "react-router-dom";
 
-let options = [];
+import {generateSvgSprite} from './generateSvgSprite';
 
-for (let i = 0; i < 100; i++) {
-    options.push({
-        id:   `${i}`,
-        name: `Item${i}`
-    });
-}
+import {DesignSystem} from './DesignSystem';
+import { NodeElement } from './elements/Node';
+import { TagElement } from './elements/Tag';
+import { TooltipElement } from './elements/Tooltip';
+import { ButtonElement } from './elements/Button';
+import { InputElement } from './elements/Input';
+import { IconButtonElement } from './elements/IconButton';
+import { SwitchIconButtonEl } from './elements/SwitchIconButton';
+import { AutocompleteEl } from './elements/Autocomplete';
+import { InputDropdownEl } from './elements/InputDropdown';
+import { ListEl } from './elements/List';
+import { TabsEl } from './elements/Tabs';
+import { FlexFlowerEl } from './elements/FlexFlower';
+import { DividerEl } from './elements/Divider';
+import { MenuEl } from './elements/Menu';
+import { LinkEl } from './elements/Link';
+
+
+generateSvgSprite();
 
 const App = () => {
-    const tagRef = useRef(null);
-
-    console.log('tagRef -->', tagRef);
-
-    useEffect(() => {
-        console.log('tagRef -->', tagRef.current.textContent);
-    }, [tagRef.current])
-
-    return (
-      <div id="app">
-          <ThemeProvider>
-              <div style={{ width: 200, marginTop: '50px' }}>
-                  <h3>Node</h3>
-                  <Node label='div' primary/>
-              </div>
-              <div style={{ width: 200, marginTop: '50px' }}>
-                  <h3>Tag</h3>
-                  <Tag innerRef={tagRef}>Super-Cool</Tag>
-              </div>
-              {/*<div style={{ width: 200, marginTop: '50px' }}>*/}
-              {/*    <h2>Autocomplete</h2>*/}
-              {/*    <Autocomplete*/}
-              {/*        options={options}*/}
-              {/*        secondary*/}
-              {/*        value={this.state.value}*/}
-              {/*        onChange={this.handleChange}*/}
-              {/*        onKeyDown={this.handleKeyDown}*/}
-              {/*        placeholder="Autocomplete"*/}
-              {/*    />*/}
-              {/*</div>*/}
-              {/*<div style={{ width: '200px', marginTop: '20px' }}>*/}
-              {/*    <h2>Virtualized Dropdown</h2>*/}
-              {/*    <VirtualizedDropdown*/}
-              {/*        onChange={this.handleDropdownChange}*/}
-              {/*        activeOptions={['1', '2']}*/}
-              {/*        value={this.state.selectedId}*/}
-              {/*        options={options}*/}
-              {/*    />*/}
-              {/*</div>*/}
-          </ThemeProvider>
+  return (
+    <Router>
+      <div style={{display: 'flex'}}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          borderRight: '1px solid black',
+          width: 240,
+          padding: 12
+        }}>
+          <Link to="/">All Components</Link>
+          <Link to="/node">Node</Link>
+          <Link to="/tag">Tag</Link>
+          <Link to="/tooltip">Tooltip</Link>
+          <Link to="/button">Button</Link>
+          <Link to="/input">Input</Link>
+          <Link to="/icon-button">Icon Button</Link>
+          <Link to="/switch-icon-button">Switch Icon Button</Link>
+          <Link to="/autocomplete">Autocomplete</Link>
+          <Link to="/input-dropdown">Input Dropdown</Link>
+          <Link to="/list">List</Link>
+          <Link to="/link">Link</Link>
+          <Link to="/tab-icons">Tab icons</Link>
+          <Link to="/flex-controller">Flex Controller</Link>
+          <Link to="/divider">Divider</Link>
+          <Link to="/menu">Menu</Link>
+        </div>
+        <div>
+          <Routes>
+            <Route path="/" element={<DesignSystem/>}/>
+            <Route path="/node" element={<NodeElement/>}/>
+            <Route path="/tag" element={<TagElement/>}/>
+            <Route path="/tooltip" element={<TooltipElement/>}/>
+            <Route path="/button" element={<ButtonElement/>}/>
+            <Route path="/input" element={<InputElement/>}/>
+            <Route path="/icon-button" element={<IconButtonElement/>}/>
+            <Route path="/switch-icon-button" element={<SwitchIconButtonEl/>}/>
+            <Route path="/autocomplete" element={<AutocompleteEl/>}/>
+            <Route path="/input-dropdown" element={<InputDropdownEl/>}/>
+            <Route path="/link" element={<LinkEl/>}/>
+            <Route path="/list" element={<ListEl/>}/>
+            <Route path="/tab-icons" element={<TabsEl/>}/>
+            <Route path="/flex-controller" element={<FlexFlowerEl/>}/>
+            <Route path="/divider" element={<DividerEl/>}/>
+            <Route path="/menu" element={<MenuEl/>}/>
+          </Routes>
+        </div>
       </div>
-    );
+    </Router>
+  );
 }
 
 export default App;

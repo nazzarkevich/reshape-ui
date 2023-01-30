@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import switchIconButton from '../SwitchIconButton/theme';
-import dropdownSearch from '../DropdownSearch/theme';
 import autocomplete from '../Autocomplete/theme';
 import actionButton from '../ActionButton/theme';
 import iconButton from '../IconButton/theme';
@@ -13,7 +12,6 @@ import indent from '../Indent/theme';
 import button from '../Button/theme';
 import input from '../Input/theme';
 import inputDropdown from '../InputDropdown/theme';
-import unitInput from '../UnitInput/theme';
 import node from '../Node/theme';
 import icon from '../Icon/theme';
 import menu from '../Menu/theme';
@@ -60,7 +58,6 @@ const ThemeProvider = props => {
             list:             list(computedStyles),
             input:            input(computedStyles),
             inputDropdown:    inputDropdown(computedStyles),
-            unitInput:        unitInput(computedStyles),
             tabs:             tabs(computedStyles),
             icon:             icon(computedStyles),
             node:             node(computedStyles),
@@ -81,7 +78,6 @@ const ThemeProvider = props => {
             autocomplete:     autocomplete(computedStyles),
             actionButton:     actionButton(computedStyles),
             listItemText:     listItemText(computedStyles),
-            dropdownSearch:   dropdownSearch(computedStyles),
             switchIconButton: switchIconButton(computedStyles)
         };
 

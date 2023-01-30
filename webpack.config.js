@@ -30,9 +30,13 @@ module.exports = {
                 use:  ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.svg$/,
-                use: ['@svgr/webpack']
-            }
+                test:   /\.svg$/,
+                loader: 'svg-sprite-loader'
+            },
+            // {
+            //     test: path.resolve(__dirname, '.src/components/assets/icons'),
+            //     loader: 'svg-sprite-loader'
+            // },
         ]
     }
 };

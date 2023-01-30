@@ -4,11 +4,31 @@
     width: 134px !important;
 }
 
-svg path,
-svg symbol {
-    fill: inherit;
+/*svg path,*/
+/*svg symbol {*/
+/*    fill: inherit;*/
+/*}*/
+
+body {
+    position: relative;
+    background: #fbfbfb;
 }
 
-.linkslist {
-    width: 134px !important;
+a {
+    display: block;
+    padding: 4px;
+    color: #333333;
+    text-decoration: none;
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    box-sizing: border-box;
+}
+a:hover {
+    color: #222222;
+    background: #ebebeb;
+}
+
+symbol path {
+    fill: inherit;
 }

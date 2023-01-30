@@ -65,8 +65,7 @@ const InputDropdown = props => {
                         disabled={disableDropdown}
                         style={styles.dropdown}
                         secondary={secondary}
-                        placeholder="+"
-                        title="+"
+                        placeholder="px"
                         value={selectedId}
                         options={options}
                     /> : null

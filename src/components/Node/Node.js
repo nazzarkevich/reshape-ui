@@ -13,6 +13,8 @@ const propTypes = {
     title:        PropTypes.string,
     label:        PropTypes.string.isRequired,
     indents:      PropTypes.node,
+    hovered:      PropTypes.bool,
+    tertiary:     PropTypes.bool,
     tabIndex:     PropTypes.number,
     elementRef:   PropTypes.func,
     startIcon:    PropTypes.node,

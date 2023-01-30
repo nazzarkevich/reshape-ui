@@ -12,7 +12,7 @@ import {
     PLACEMENT,
     DEFAULT_TITLE,
     ENTER_DELAY,
-    TOOLTIP_SCROLL_CONTAINER
+    // TOOLTIP_SCROLL_CONTAINER
 } from './tooltip.ct';
 
 class Tooltip extends Component {
@@ -50,25 +50,25 @@ class Tooltip extends Component {
         enterDelay: ENTER_DELAY
     };
 
-    componentDidMount () {
-        this.scrollContainer = document.querySelector(`.${TOOLTIP_SCROLL_CONTAINER}`);
-
-        if (this.scrollContainer) {
-            this.scrollContainer.addEventListener(
-                'scroll',
-                this.handleContainerScroll
-            );
-        }
-    }
-
-    componentWillUnmount () {
-        if (this.scrollContainer) {
-            this.scrollContainer.removeEventListener(
-                'scroll',
-                this.handleContainerScroll
-            );
-        }
-    }
+    // componentDidMount () {
+    //     this.scrollContainer = document.querySelector(`.${TOOLTIP_SCROLL_CONTAINER}`);
+    //
+    //     if (this.scrollContainer) {
+    //         this.scrollContainer.addEventListener(
+    //             'scroll',
+    //             this.handleContainerScroll
+    //         );
+    //     }
+    // }
+    //
+    // componentWillUnmount () {
+    //     if (this.scrollContainer) {
+    //         this.scrollContainer.removeEventListener(
+    //             'scroll',
+    //             this.handleContainerScroll
+    //         );
+    //     }
+    // }
 
     componentDidUpdate (prevProps, prevState) {
         const { hover, show } = this.state;
@@ -87,11 +87,11 @@ class Tooltip extends Component {
         }
     }
 
-    handleContainerScroll = () => {
-        const { show } = this.state;
-
-        if (show) this.hideTooltip();
-    };
+    // handleContainerScroll = () => {
+    //     const { show } = this.state;
+    //
+    //     if (show) this.hideTooltip();
+    // };
 
     showTooltip = () => {
         this.setState({ show: true });

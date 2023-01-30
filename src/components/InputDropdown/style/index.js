@@ -8,11 +8,13 @@ export default function (theme) {
     return {
         wrapper:  {
             width:      theme.width,
-            display:    theme.display,
-            position:   theme.position,
-            alignItems: theme.alignItems
+            display:    'flex',
+            position:   'relative',
+            alignItems: 'center'
         },
         dropdown: {
+            cursor: 'pointer',
+            display: 'flex',
             maxHeight:            'auto',
             flexShrink:           '2',
             listWidth:            'auto',
