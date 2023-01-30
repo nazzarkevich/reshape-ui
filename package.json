@@ -1,6 +1,6 @@
 {
   "name": "reshape-ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Reshape design system",
   "main": "dist/index.js",
   "scripts": {
