@@ -26,13 +26,13 @@ function _default(theme, props) {
     //     bottom:    theme.bottom
     // },
     wrapperStyle: {
-      width: theme.width,
       position: 'relative'
     },
     titleStyle: {
       display: 'block',
       cursor: 'pointer',
       textAlign: 'center',
+      userSelect: 'none',
       color: styles.primary,
       fontSize: styles.textNormal,
       fontFamily: styles.fontFamily,
@@ -53,8 +53,7 @@ function _default(theme, props) {
     },
     listItemTextStyle: {
       width: '100%',
-      display: 'block',
-      textAlign: 'center'
+      display: 'block'
     }
   };
 }

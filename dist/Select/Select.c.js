@@ -53,14 +53,9 @@ var Select = /*#__PURE__*/function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "handleOptionClick", function (listItem) {
       return function (event) {
         var onChange = _this.props.onChange;
-        var id = listItem.id,
-          name = listItem.name;
+        var id = listItem.id;
         if (typeof onChange === 'function') {
-          onChange({
-            id: id,
-            name: name,
-            event: event
-          });
+          onChange(id, event);
           _this.closeMenu();
         }
       };

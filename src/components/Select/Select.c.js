@@ -54,10 +54,10 @@ class Select extends Component {
 
     handleOptionClick = listItem => event => {
         const { onChange } = this.props;
-        const { id, name } = listItem;
+        const { id } = listItem;
 
         if (typeof onChange === 'function') {
-            onChange({ id, name, event });
+            onChange(id, event);
 
             this.closeMenu();
         }

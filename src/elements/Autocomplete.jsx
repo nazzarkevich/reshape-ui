@@ -13,10 +13,6 @@ const options = [
     id: 'Francis Ford Coppola',
   },
   {
-    name: 'The Godfather: Part II',
-    id: 'Francis Ford Coppola',
-  },
-  {
     name: 'The Dark Knight',
     id: 'Christopher Nolan',
   },
@@ -44,7 +40,7 @@ export const AutocompleteEl = () => {
   const onChange = (e, value) => setValue(value);
 
   return (
-    <ItemGroup name='Autocomplete'>
+    <ItemGroup title='Autocomplete'>
       <Item subtitle={`Currently doesn't show selected title, because we didn't used it for classes`}>
         <Autocomplete
           placeholder='Select movies'

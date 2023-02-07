@@ -17,6 +17,7 @@ import { ButtonElement } from './elements/Button';
 import { InputElement } from './elements/Input';
 import { IconButtonElement } from './elements/IconButton';
 import { SwitchIconButtonEl } from './elements/SwitchIconButton';
+import { SelectEl } from './elements/Select';
 import { AutocompleteEl } from './elements/Autocomplete';
 import { InputDropdownEl } from './elements/InputDropdown';
 import { ListEl } from './elements/List';
@@ -48,6 +49,7 @@ const App = () => {
           <Link to="/input">Input</Link>
           <Link to="/icon-button">Icon Button</Link>
           <Link to="/switch-icon-button">Switch Icon Button</Link>
+          <Link to="/select">Select</Link>
           <Link to="/autocomplete">Autocomplete</Link>
           <Link to="/input-dropdown">Input Dropdown</Link>
           <Link to="/list">List</Link>
@@ -67,6 +69,7 @@ const App = () => {
             <Route path="/input" element={<InputElement/>}/>
             <Route path="/icon-button" element={<IconButtonElement/>}/>
             <Route path="/switch-icon-button" element={<SwitchIconButtonEl/>}/>
+            <Route path="/select" element={<SelectEl/>}/>
             <Route path="/autocomplete" element={<AutocompleteEl/>}/>
             <Route path="/input-dropdown" element={<InputDropdownEl/>}/>
             <Route path="/link" element={<LinkEl/>}/>
