@@ -31,10 +31,9 @@ var propTypes = {
   placeholder: _propTypes["default"].string,
   selectedId: _propTypes["default"].string,
   onInputKeyDown: _propTypes["default"].func,
-  onInputChange: _propTypes["default"].func,
+  onInputChange: _propTypes["default"].func.isRequired,
   onInputBlur: _propTypes["default"].func,
-  onDropdownChange: _propTypes["default"].func,
-  onChange: _propTypes["default"].func,
+  onDropdownChange: _propTypes["default"].func.isRequired,
   secondary: _propTypes["default"].bool,
   error: _propTypes["default"].bool,
   disableDropdown: _propTypes["default"].bool,
@@ -57,10 +56,10 @@ var InputDropdown = /*#__PURE__*/function (_PureComponent) {
     var _this;
     _classCallCheck(this, InputDropdown);
     _this = _super.call(this, props);
-    _defineProperty(_assertThisInitialized(_this), "handleDropdownChange", function (event, value) {
+    _defineProperty(_assertThisInitialized(_this), "handleDropdownChange", function (value, event) {
       var onDropdownChange = _this.props.onDropdownChange;
       if (typeof onDropdownChange === 'function') {
-        onDropdownChange(value);
+        onDropdownChange(value, event);
       }
     });
     _defineProperty(_assertThisInitialized(_this), "handleInputChange", function (event) {
@@ -84,43 +83,21 @@ var InputDropdown = /*#__PURE__*/function (_PureComponent) {
         onInputBlur(event);
       }
     });
-    _defineProperty(_assertThisInitialized(_this), "handleChange", function () {
-      var _this$props = _this.props,
-        value = _this$props.value,
-        selectedId = _this$props.selectedId,
-        onChange = _this$props.onChange;
-      if (typeof onChange === 'function') {
-        onChange({
-          value: value,
-          selectedId: selectedId
-        });
-      }
-    });
     return _this;
   }
   _createClass(InputDropdown, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      var _this$props2 = this.props,
-        value = _this$props2.value,
-        selectedId = _this$props2.selectedId;
-      if (value !== prevProps.value || selectedId !== prevProps.selectedId) {
-        this.handleChange();
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this$props3 = this.props,
-        value = _this$props3.value,
-        selectedId = _this$props3.selectedId,
-        showDropdown = _this$props3.showDropdown;
-      var _this$props4 = this.props,
-        error = _this$props4.error,
-        options = _this$props4.options,
-        secondary = _this$props4.secondary,
-        placeholder = _this$props4.placeholder,
-        disableDropdown = _this$props4.disableDropdown;
+      var _this$props = this.props,
+        value = _this$props.value,
+        selectedId = _this$props.selectedId,
+        showDropdown = _this$props.showDropdown;
+      var _this$props2 = this.props,
+        error = _this$props2.error,
+        options = _this$props2.options,
+        secondary = _this$props2.secondary,
+        placeholder = _this$props2.placeholder,
+        disableDropdown = _this$props2.disableDropdown;
       var styles = (0, _compileStyles["default"])(_style["default"], this.props, this.state);
       var inputDropdownProps = {
         styles: styles,

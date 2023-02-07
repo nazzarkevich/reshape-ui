@@ -8,7 +8,7 @@ var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _style = require("./style");
 var _Input = _interopRequireDefault(require("../Input"));
-var _Autocomplete = _interopRequireDefault(require("../Autocomplete"));
+var _Select = _interopRequireDefault(require("../Select"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var propTypes = {
   value: _propTypes["default"].string,
@@ -55,12 +55,13 @@ var InputDropdown = function InputDropdown(props) {
     secondary: secondary,
     error: error,
     value: value
-  }), showDropdown ? /*#__PURE__*/_react["default"].createElement(_Autocomplete["default"], {
-    onChange: onDropdownChange,
-    disabled: disableDropdown,
+  }), showDropdown ? /*#__PURE__*/_react["default"].createElement(_Select["default"], {
+    onChange: onDropdownChange
+    // TODO: check later
+    // disabled={disableDropdown}
+    ,
     style: styles.dropdown,
     secondary: secondary,
-    placeholder: "px",
     value: selectedId,
     options: options
   }) : null);

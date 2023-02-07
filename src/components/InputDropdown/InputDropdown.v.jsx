@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Wrapper } from './style';
 
 import Input from '../Input';
-import Autocomplete from '../Autocomplete';
+import Select from '../Select';
 
 const propTypes = {
     value:            PropTypes.string,
@@ -60,12 +60,12 @@ const InputDropdown = props => {
             />
             {
                 showDropdown ?
-                    <Autocomplete
+                    <Select
                         onChange={onDropdownChange}
-                        disabled={disableDropdown}
+                        // TODO: check later
+                        // disabled={disableDropdown}
                         style={styles.dropdown}
                         secondary={secondary}
-                        placeholder="px"
                         value={selectedId}
                         options={options}
                     /> : null

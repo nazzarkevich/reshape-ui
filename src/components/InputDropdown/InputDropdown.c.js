@@ -11,10 +11,9 @@ const propTypes = {
     placeholder:      PropTypes.string,
     selectedId:       PropTypes.string,
     onInputKeyDown:   PropTypes.func,
-    onInputChange:    PropTypes.func,
+    onInputChange:    PropTypes.func.isRequired,
     onInputBlur:      PropTypes.func,
-    onDropdownChange: PropTypes.func,
-    onChange:         PropTypes.func,
+    onDropdownChange: PropTypes.func.isRequired,
     secondary:        PropTypes.bool,
     error:            PropTypes.bool,
     disableDropdown:  PropTypes.bool,
@@ -41,23 +40,11 @@ class InputDropdown extends PureComponent {
         super(props);
     }
 
-    componentDidUpdate (prevProps) {
-        const { value, selectedId } = this.props;
-
-        if (
-            value !== prevProps.value ||
-            selectedId !== prevProps.selectedId
-        ) {
-            this.handleChange();
-        }
-    }
-
-
-    handleDropdownChange = (event, value) => {
+    handleDropdownChange = (value, event) => {
         const { onDropdownChange } = this.props;
 
         if (typeof onDropdownChange === 'function') {
-            onDropdownChange(value);
+            onDropdownChange(value, event);
         }
     };
 
@@ -86,14 +73,6 @@ class InputDropdown extends PureComponent {
 
         if (typeof onInputBlur === 'function') {
             onInputBlur(event);
-        }
-    };
-
-    handleChange = () => {
-        const { value, selectedId, onChange } = this.props;
-
-        if (typeof onChange === 'function') {
-            onChange({ value, selectedId });
         }
     };
 
