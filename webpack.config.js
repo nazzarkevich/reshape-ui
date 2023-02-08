@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode:      'development',
@@ -10,9 +12,9 @@ module.exports = {
         app: './src/index.js'
     },
     output:    {
-        path:       path.resolve(__dirname, './public'),
-        filename:   'index.js',
-        publicPath: '/'
+        path:       path.resolve(__dirname, './dist'),
+        filename:   'bundle.js'
+        // publicPath: '/'
     },
     // need for webpack to resolve right pathways
     resolve:   {
@@ -32,11 +34,13 @@ module.exports = {
             {
                 test:   /\.svg$/,
                 loader: 'svg-sprite-loader'
-            },
-            // {
-            //     test: path.resolve(__dirname, '.src/components/assets/icons'),
-            //     loader: 'svg-sprite-loader'
-            // },
+            }
         ]
-    }
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './public/index.html'
+        })
+    ]
 };

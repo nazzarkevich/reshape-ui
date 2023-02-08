@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "babel src/components --out-dir dist --copy-files && del dist/**/*.test.js",
+    "build:prod": "webpack --config webpack.config.js",
     "test": "jest"
   },
   "jest": {
@@ -67,8 +68,10 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "color": "^4.2.3",
     "deepmerge": "^4.2.2",
+    "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
     "react-event-listener": "^0.6.6",
     "react-window": "^1.8.8",
